@@ -12,6 +12,8 @@ class Database {
     String server
     String port
     String sid
+    String username
+    String password
     String tnsname
 
 

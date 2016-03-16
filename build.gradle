@@ -75,6 +75,11 @@ dependencies {
     assets "com.craigburke.angular:angular-annotate-asset-pipeline:2.4.0"
     assets "com.craigburke:js-closure-wrap-asset-pipeline:1.2.0"
     compile "org.apache.commons:commons-csv:1.2"
+    runtime "com.oracle:ojdbc6:11.2.0.3" ///com/oracle/ojdbc6/11.2.0.3/
+    compile 'org.grails.plugins:quartz:2.0.8'
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+
 }
 
 task wrapper(type: Wrapper) {
@@ -102,19 +107,26 @@ bower {
     'datatables-plugins'('1.0.1'){
         source '**'
     }
-    'angular'('1.5.x') {
+    'angular'('1.4.x') {
         source 'angular.js'
     }
-    'angular-resource'('1.5.x') {
+    'angular-resource'('1.4.x') {
         source 'angular-resource.js' >> '/angular/'
     }
-    'angular-mocks'('1.5.x') {
+    'angular-mocks'('1.4.x') {
         source 'angular-mocks.js' >> '/angular/'
     }
-    'angular-route'('1.5.x') {
+    'angular-route'('1.4.x') {
         source 'angular-route.js' >> '/angular/'
     }
     'socket.io-client'(){
+        source '**'
+    }
+    'angular-chart.js'(){
+        source '**'
+    }
+
+    'moment'('2.12.0'){
         source '**'
     }
 

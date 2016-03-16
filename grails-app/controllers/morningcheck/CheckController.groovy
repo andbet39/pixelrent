@@ -18,7 +18,7 @@ class CheckController {
     }
 
     def create() {
-        respond new Check(params)
+        respond new Check(params),model:[databases:Database.list()]
     }
 
     @Transactional
@@ -31,7 +31,7 @@ class CheckController {
 
         if (check.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond check.errors, view:'create'
+            respond check.errors, view:'create',model:[databases:Database.list()]
             return
         }
 

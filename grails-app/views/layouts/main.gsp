@@ -112,10 +112,44 @@
                         <g:link controller="main" action="index"> <i class="fa fa-dashboard fa-fw"></i> Main</g:link>
                     </li>
                     <li>
-                        <g:link controller="check" action="index"> <i class="fa fa-dashboard fa-fw"></i> Check</g:link>
+                        <g:link controller="main" action="viewcheck"> <i class="fa fa-dashboard fa-fw"></i> Check</g:link>
+
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <g:link controller="main" action="viewcheck"> <i class="fa fa-list"></i> List</g:link>
+                            </li>
+                            <li>
+                                <g:link controller="check" action="create"><i class="fa fa-plus-square-o"></i>
+                                    New</g:link>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <g:link controller="database" action="index"> <i class="fa fa-database fa-fw"></i> Database</g:link>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <g:link controller="database" action="index"><i class="fa fa-list"></i> List</g:link>
+                            </li>
+                            <li>
+                                <g:link controller="database" action="create"><i class="fa fa-plus-square-o"></i>
+                                    New</g:link>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <g:link controller="database" action="index"> <i class="fa fa-dashboard fa-fw"></i> Database</g:link>
+                        <g:link controller="schedule" action="index"> <i class="fa fa-dashboard fa-fw"></i> Schedule</g:link>
+                    </li>
+                    <li>
+                        <g:link controller="scheduleConfig" action="index"> <i class="fa fa-calendar fa-fw"></i> Scheduling<span class="fa arrow"></span></g:link>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                 <g:link controller="scheduleConfig" action="index"> <i class="fa fa-list"></i> List</g:link>
+                            </li>
+                            <li>
+                                <g:link controller="scheduleConfig" action="create"><i class="fa fa-plus-square-o"></i>
+                                    New</g:link>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

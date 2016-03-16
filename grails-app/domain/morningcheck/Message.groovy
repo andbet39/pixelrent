@@ -14,7 +14,7 @@ class Message {
     String message
 
     def afterInsert = {
-        socketService.broadCast(this);
+        //socketService.broadCast(this);
         log.info( "data inserted" )
     }
 

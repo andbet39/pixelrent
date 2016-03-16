@@ -1,4 +1,8 @@
 ---
+
+quartz :
+    autoStartup : true
+
 hibernate:
     cache:
         queries: false
@@ -16,7 +20,7 @@ environments:
         dataSource:
             logSql: true
             formatSql: true
-            dbCreate: create-drop
+            dbCreate: update
             url: jdbc:mysql://localhost/morningcheck
             username: root
             password: root

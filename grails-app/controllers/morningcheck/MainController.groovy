@@ -1,11 +1,41 @@
 package morningcheck
 
-import myutil.myCSVUtils
+
 
 class MainController {
 
     def wubookService
     def socketService
+    def checkService
+    def engineService
+
+    def viewcheck(int max){
+
+        params.max = Math.min(max ?: 10, 100)
+            respond Check.list(params), model:[checkCount: Check.count()]
+
+    }
+
+    def execute(Check c){
+        engineService.runSchedule()
+        redirect(url:'/main/viewCheckResult/'+c.id)
+     }
+
+    def viewCheckResult(Check c){
+        log.info(c);
+        def results=CheckResult.findAllByC(c)
+         [resList: results ]
+    }
+
+
+
+    def run (){
+        engineService.runSchedule()
+        render "DONE";
+    }
+
+
+
 
     def index() {
 

@@ -41,4 +41,25 @@ $(document).ready(function() {
     $('#table-reservation').DataTable({
         responsive: true
     });
+
+    $('#table-config').DataTable({
+        responsive: true
+    });
+
+    $('#table-checks').DataTable({
+        responsive: true,
+        "order": [[ 1, "desc" ]]
+        
+    });
+
+    $('#table-schedule').DataTable({
+        responsive: true,
+
+        "order": [[ 1, "desc" ]]
+
+    });
+
+
 });
+
+

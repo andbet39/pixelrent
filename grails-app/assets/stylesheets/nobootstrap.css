@@ -1,0 +1,54 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require /bootstrap/bootstrap
+
+*= require /font-awesome/css/font-awesome
+*= require_self
+*/
+
+
+body {
+    display: block;
+    margin: 0px;
+    margin-right:0px;
+    padding-top: 60px;
+
+}
+
+.pix_row{
+    display: block;
+    height: 10px;
+    overflow: hidden;
+
+}
+.pix_cell {
+
+    border-top :1px solid;
+    border-right: 1px solid;
+    width:10px;
+    height:9px;
+    background-color: rgba(91, 255, 240, 0.04);
+    border-color: rgba(165, 144, 255, 0.53);
+    float: left;
+
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.12);
+}
+
+
+.space_link{
+    height:10px !important;
+    width: 10px;
+    padding-top: 0px;
+    padding-left: 0px;
+    display: block;
+}
