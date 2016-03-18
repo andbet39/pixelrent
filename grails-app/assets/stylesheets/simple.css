@@ -19,4 +19,10 @@
 }
 body{
     padding-top: 60px;
+    background-color: white;
 }
+
+
+.grid-item {
+    float: left;
+ }

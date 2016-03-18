@@ -77,8 +77,9 @@ dependencies {
     compile "org.apache.commons:commons-csv:1.2"
     runtime "com.oracle:ojdbc6:11.2.0.3" ///com/oracle/ojdbc6/11.2.0.3/
     compile 'org.grails.plugins:quartz:2.0.8'
+    compile "org.grails.plugins:spring-security-core:3.0.3"
     compile fileTree(dir: 'lib', include: '*.jar')
-
+    compile "com.stripe:stripe-java:1.46.0"
 
 }
 
@@ -88,7 +89,9 @@ task wrapper(type: Wrapper) {
 
 
 bower {
-
+    'angular-masonry'('0.16.0'){
+        source '**'
+    }
     'bootstrap'('3.x.x') {
         source 'dist/css/bootstrap.css' >> '/bootstrap/'
     }
@@ -107,24 +110,16 @@ bower {
     'datatables-plugins'('1.0.1'){
         source '**'
     }
-    'angular'('1.4.x') {
+    'angular'('^1.5.0') {
         source 'angular.js'
-    }
-    'angular-resource'('1.4.x') {
-        source 'angular-resource.js' >> '/angular/'
-    }
-    'angular-mocks'('1.4.x') {
-        source 'angular-mocks.js' >> '/angular/'
-    }
-    'angular-route'('1.4.x') {
-        source 'angular-route.js' >> '/angular/'
     }
     'socket.io-client'(){
         source '**'
     }
-    'angular-chart.js'(){
+    'angular-chart.js'('0.9.0'){
         source '**'
     }
+
 
     'moment'('2.12.0'){
         source '**'

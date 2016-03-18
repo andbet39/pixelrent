@@ -3,7 +3,11 @@ import grails.rest.*
 
  class Space {
 
-    static constraints = {
+    static constraint = {
+       pos_x(nullable:true)
+       pos_y(nullable:true)
+      // pos_x(nullable:true)
+      // pos_y(nullable:true)
     }
 
     int pos_x
@@ -12,6 +16,10 @@ import grails.rest.*
     int size_y
     String img_url
     String ad_link
+    User owner
+    boolean paid
+
+
 
 
 }

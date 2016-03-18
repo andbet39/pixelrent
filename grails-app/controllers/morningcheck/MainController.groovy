@@ -1,5 +1,6 @@
 package morningcheck
 
+import grails.plugin.springsecurity.annotation.Secured
 
 
 class MainController {
@@ -9,6 +10,7 @@ class MainController {
     def checkService
     def engineService
 
+    @Secured("ROLE_USER")
     def viewcheck(int max){
 
         params.max = Math.min(max ?: 10, 100)
@@ -21,6 +23,8 @@ class MainController {
         redirect(url:'/main/viewCheckResult/'+c.id)
      }
 
+
+    @Secured("ROLE_USER")
     def viewCheckResult(Check c){
         log.info(c);
         def results=CheckResult.findAllByC(c)

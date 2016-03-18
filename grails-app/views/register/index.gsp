@@ -19,9 +19,10 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form action="save">
+            <g:form controller="register" action="save">
                 <fieldset class="form">
-                    <f:all bean="user"/>
+                    <input type="text" name="username">
+                    <input type="password" name="password">
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

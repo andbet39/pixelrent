@@ -2,24 +2,16 @@
 //= require_self (1)
 
 
-angular.module("pixelrent",['wu.masonry']).controller("MassController", MassController);
+angular.module("pixelrent",[]).controller("NewSpaceController", NewSpaceController);
 
-function MassController($scope,$http,$location) {
+function NewSpaceController($scope,$http,$location) {
     var vm = this;
 
-
-    $scope.spaces =[
-
-    ];
-
+    $scope.newSpace={img_url:"www.google.com",size_x:100,size_y:100};
 
     $scope.init = function(){
 
-        $http.get('/api/activespaces').then(function(data){
 
-           $scope.spaces  = data.data;
-            console.log($scope.spaces)
-        });
 
 
      };

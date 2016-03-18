@@ -1,7 +1,10 @@
 package morningcheck
 import grails.converters.*
 import org.joda.time.DateTime
+import grails.plugin.springsecurity.annotation.Secured
 
+
+@Secured("ROLE_USER")
 class ChartDataController  {
 
     def getCheckResult(Check _c,String interval) {

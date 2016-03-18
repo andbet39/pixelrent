@@ -23,6 +23,7 @@ class SpaceController {
 
     @Transactional
     def save(Space space) {
+
         if (space == null) {
             transactionStatus.setRollbackOnly()
             notFound()

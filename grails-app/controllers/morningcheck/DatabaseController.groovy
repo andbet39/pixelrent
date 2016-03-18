@@ -2,21 +2,24 @@ package morningcheck
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
 class DatabaseController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    @Secured("ROLE_USER")
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Database.list(params), model:[databaseCount: Database.count()]
     }
 
+    @Secured("ROLE_ADMIN")
     def show(Database database) {
         respond database
     }
 
+    @Secured("ROLE_ADMIN")
     def create() {
         respond new Database(params)
     }
@@ -46,11 +49,13 @@ class DatabaseController {
         }
     }
 
+    @Secured("ROLE_ADMIN")
     def edit(Database database) {
         respond database
     }
 
     @Transactional
+    @Secured("ROLE_ADMIN")
     def update(Database database) {
         if (database == null) {
             transactionStatus.setRollbackOnly()
@@ -76,6 +81,7 @@ class DatabaseController {
     }
 
     @Transactional
+    @Secured("ROLE_ADMIN")
     def delete(Database database) {
 
         if (database == null) {

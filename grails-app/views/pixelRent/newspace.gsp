@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
+        <meta name="layout" content="empty" />
         <g:set var="entityName" value="${message(code: 'space.label', default: 'Space')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#create-space" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-            </ul>
+
+
+
+
+    <div class="container">
+        <div ng-app="pixelrent"   ng-controller="NewSpaceController">
+
+            <form>
+                <input type="text" name="img_url" ng-model="newSpace.img_url">
+            </form>
+
+
+
+
+
         </div>
-        <div id="create-space" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.space}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.space}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
+
+
+    </div>
+
+
+
             <g:form action="save">
                 <fieldset class="form">
                     <f:all bean="space"/>
@@ -33,6 +36,5 @@
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
             </g:form>
-        </div>
     </body>
 </html>
