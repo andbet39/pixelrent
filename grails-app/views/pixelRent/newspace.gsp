@@ -13,9 +13,12 @@
     <div class="container">
         <div ng-app="pixelrent"   ng-controller="NewSpaceController">
 
-            <form>
-                <input type="text" name="img_url" ng-model="newSpace.img_url">
-            </form>
+            <g:form controller="cusSpace" action="save">
+                <input type="text" name="ad_link" ng-model="newSpace.ad_link">
+
+                <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+
+            </g:form>
 
 
 
@@ -26,15 +29,5 @@
 
     </div>
 
-
-
-            <g:form action="save">
-                <fieldset class="form">
-                    <f:all bean="space"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
     </body>
 </html>

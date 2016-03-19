@@ -6,7 +6,8 @@ import grails.rest.*
     static constraint = {
        pos_x(nullable:true)
        pos_y(nullable:true)
-      // pos_x(nullable:true)
+       expire_date(nullable:true)
+       image(nullable:true, maxSize: 1024 * 1024 * 2 /* 2MB */)
       // pos_y(nullable:true)
     }
 
@@ -18,8 +19,9 @@ import grails.rest.*
     String ad_link
     User owner
     boolean paid
+    Date expire_date
 
-
+    byte[] image
 
 
 }

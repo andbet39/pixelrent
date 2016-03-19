@@ -25,43 +25,48 @@ class PixelRentController {
 
     def mass(){
 
+
+        def query = Space.where {
+            ( expire_date > new Date() )
+        }
+
+        def spaces = query.list()
+
+        def total_space =0
+        def active_space =0
+        for(space in spaces){
+            total_space += space.size_x*space.size_y
+            active_space++;
+        }
+
+          respond spaces, model:[spaceCount: active_space,total_space:total_space]
+
+
     }
 
     @Secured("ROLE_USER")
-    def newspace(){
-        respond new Space(params)
+    def renew(Space space){
+
+        def amount = space.size_y*space.size_x
+
+        def order = new Order(space: space,amount:amount,created: new Date(),owner:springSecurityService.currentUser,status: "CREATED")
+
+       /* if(order.hasErrors()){
+            log.info(order.errors.toString())
+        }*/
+        order.save(flush: true)
+
+        redirect(controller: "cusSpace", action:"checkout",id:order.id)
     }
 
-    @Transactional
-    @Secured("ROLE_USER")
-    def save(Space space) {
-        def user = springSecurityService.currentUser
-        space.owner = user
 
-        if (space == null) {
-            transactionStatus.setRollbackOnly()
-            notFound()
-            return
-        }
-
-        if (space.hasErrors()) {
-            transactionStatus.setRollbackOnly()
-            respond space.errors, view:'create'
-            return
-        }
-
-        space.save flush:true
-
-        redirect(action: "checkout", id: space.id)
-
-
-    }
 
     @Secured("ROLE_USER")
     def charge(){
 
-        def space = Space.findById(params.id)
-     def token = params.stripeToken
+        def order = Order.findById(params.id)
+        def space = order.space
+        def token = params.stripeToken
 
         log.info("Received token "+ token)
 
@@ -79,6 +84,9 @@ class PixelRentController {
 
             Charge charge = Charge.create(chargeParams);
 
+            order.status ="PAID"
+            order.paid_on =new Date()
+            space.expire_date = space.expire_date +30
             space.paid=true;
             space.save(flush:true);
 

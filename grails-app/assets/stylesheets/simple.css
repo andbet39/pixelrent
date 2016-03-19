@@ -10,6 +10,9 @@
 *= require /bootstrap/bootstrap
 *= require /font-awesome/css/font-awesome
 *= require /font-awesome/css/font-awesome
+*= require /angularjs-slider/dist/rzslider.min
+*= require animate
+*= require style
 *= require_self
 */
 
@@ -17,12 +20,69 @@
     text-align:center;
     width:100%;
 }
-body{
-    padding-top: 60px;
+
+.intro-text{
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: white;
+    border-radius: 5px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+}
+.intro-text h2{
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+
+}
+/*.grid-item {
+    float: left;
+ }
+*/
+.ord-info{
+    padding-bottom: 20px;
+    font-size: 2rem;
 }
 
 
-.grid-item {
-    float: left;
- }
+.img-info{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+
+#pix_content{
+    margin-left:15px;
+    margin-right:5px;
+}
+
+h3.form-title{
+    margin-bottom: 5px;
+    margin-top: 8px;
+    font-size: 15px;
+    color: #db440d;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-panel{
+    padding-top: 25px;
+}
+
+.page-wrap
+{
+    min-width: 400px;
+}
+footer a{
+    color: #c5c5c5;
+}
+footer p{
+    color: gray;
+}
+
+.error-text{
+    color: #db440d;
+    font-weight: bold;
+}

@@ -26,12 +26,6 @@ function PixelMainController($scope,$http,$location) {
     };
 
     $scope.spaces =[
-        {img:"http://localhost:8080/assets/simple.png",
-            pos_type:"absolute",
-            size_x:150,
-             size_y:150,
-             pos_x:100,
-        pos_y:100}
     ];
 
     $scope.updatepos = function (x) {

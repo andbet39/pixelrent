@@ -4,8 +4,7 @@
 <html>
 <head>
     <head>
-        <meta name="layout" content="empty" />
-        <title>Rent a Pixel</title>
+        <meta name="layout" content="ninestar" />
     </head>
 </head>x
 
@@ -13,12 +12,18 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-4 col-md-offset-4 form-panel">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="form-title">Login</h3>
                     </div>
                     <div class="panel-body">
+                        <g:if test='${flash.message}'>
+                            <div class="login_message error-text" style="display: block">${flash.message}</div>
+
+                        </g:if>
+
+
                         <form role="form" action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" autocomplete="off">
 
                             <fieldset>
@@ -38,6 +43,8 @@
 
                             </fieldset>
                         </form>
+                        </br>
+                        <g:link controller="register" action="index">Signup here</g:link>
                     </div>
                 </div>
             </div>

@@ -18,9 +18,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/pixelRent/**',   access: ['permitAll']],
 	[pattern: '/register/**',    access: ['permitAll']],
 	[pattern: '/login',          access: ['permitAll']],
+	[pattern: '/about/**',          access: ['permitAll']],
 	[pattern: '/login/**',       access: ['permitAll']],
 	[pattern: '/logout/**',      access: ['permitAll']],
 	[pattern: '/auth/logout',      access: ['permitAll']],
+	[pattern: '/cusSpace/showPayload/**',      access: ['permitAll']],
 	[pattern: '/**/favicon.ico', access: ['permitAll']]
 ]
 
@@ -28,8 +30,12 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/assets/**',      filters: 'none'],
 	[pattern: '/**/js/**',       filters: 'none'],
 	[pattern: '/**/css/**',      filters: 'none'],
+	[pattern: '/**/fonts/**',      filters: 'none'],
 	[pattern: '/**/images/**',   filters: 'none'],
 	[pattern: '/**/favicon.ico', filters: 'none'],
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
+
+grails.plugin.springsecurity.logout.postOnly = false
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/'
 

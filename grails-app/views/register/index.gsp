@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+        <meta name="layout" content="ninestar" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
 
-        <div id="create-user" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.user}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.user}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
-            <g:form controller="register" action="save">
-                <fieldset class="form">
-                    <input type="text" name="username">
-                    <input type="password" name="password">
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 form-panel">
+
+
+
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="form-title">Signup</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <g:if test="${flash.errors}">
+                            <div class="alert alert-error error-text" role="alert" style="display: block">${flash.errors}</div>
+                        </g:if>
+
+
+                    <g:form controller="register" action="save">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Email" name="email" type="email" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="form-group">
+                                 <input class="form-control" placeholder="Confirm Password" name="confirmpassword" type="password" value="">
+                                </div>
+
+                                  <g:submitButton name="create" class="btn btn-success" value="Signup" />
+
+                            </fieldset>
+                        </g:form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+
+
+    </div>
     </body>
 </html>

@@ -18,9 +18,17 @@
 //= require imagesloaded/imagesloaded
 //= require angular/angular
 //= require angular-masonry/angular-masonry
+//= require ng-file-upload/ng-file-upload.min
+//= require angularjs-slider/dist/rzslider
 //= require app/pixelrent
 //= require app/massController
 //= require app/newSpaceController
+//= require app/directive
+//= require classie
+//= require gnmenu
+//= require stellar
+//= require jquery.scrollTo
+//= require custom
 //= require_self
 
 

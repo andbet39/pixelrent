@@ -2,7 +2,7 @@
 //= require_self (1)
 
 
-angular.module("pixelrent",['wu.masonry']).controller("MassController", MassController);
+angular.module("pixelrent",['wu.masonry','ngFileUpload','rzModule']).controller("MassController", MassController);
 
 function MassController($scope,$http,$location) {
     var vm = this;
