@@ -4,7 +4,7 @@
 
 angular.module("pixelrent",['wu.masonry','ngFileUpload','rzModule']).controller("MassController", MassController);
 
-function MassController($scope,$http,$location) {
+function MassController($scope,$http) {
     var vm = this;
 
 
@@ -18,7 +18,7 @@ function MassController($scope,$http,$location) {
         $http.get('/api/activespaces').then(function(data){
 
            $scope.spaces  = data.data;
-            console.log($scope.spaces)
+            console.log($scope.spaces);
         });
 
 

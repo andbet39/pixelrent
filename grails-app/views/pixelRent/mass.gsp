@@ -35,10 +35,5 @@
 
 </section>
 
-
-<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
-<script src="//desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
-
 </body>
 </html>

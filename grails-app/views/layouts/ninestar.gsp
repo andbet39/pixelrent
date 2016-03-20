@@ -61,7 +61,6 @@
 
 <!-- /#wrapper -->
 
-<asset:javascript src="simple.js"/>
 
 
 <footer>
@@ -74,6 +73,7 @@
     </div>
 </footer>
 
+<asset:javascript src="simple.js"/>
 
 
 </body>

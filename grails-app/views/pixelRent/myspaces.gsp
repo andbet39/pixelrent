@@ -38,7 +38,7 @@
                                         Size
                                     </td>
                                     <td>
-                                        Img
+                                        Image
                                     </td>
                                     <td>
                                         Expiration date

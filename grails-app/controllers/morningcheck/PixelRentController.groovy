@@ -68,11 +68,10 @@ class PixelRentController {
         def space = order.space
         def token = params.stripeToken
 
-        log.info("Received token "+ token)
 
         Stripe.apiKey = "sk_test_vkLyPOI6CcWC2xtrSa2r90up";
 
-            def  amount  = space.size_x*space.size_y
+        def  amount  = space.size_x*space.size_y
 
         log.info("amount " + amount)
 
@@ -86,9 +85,16 @@ class PixelRentController {
 
             order.status ="PAID"
             order.paid_on =new Date()
-            space.expire_date = space.expire_date +30
+
+            if( space.expire_date > new Date()) {
+                space.expire_date = space.expire_date + 30
+            }else{
+                space.expire_date = new Date() + 30
+            }
+
             space.paid=true;
             space.save(flush:true);
+            order.save(flush:true)
 
 
 

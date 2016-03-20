@@ -9,9 +9,13 @@ class ApiController {
     }
 
     def activespaces(){
-        def space = Space.findAll()
+        def query = Space.where {
+            ( expire_date > new Date() )
+        }
 
-        respond space, [formats:[ 'json']]
+        def spaces = query.list()
+
+        respond spaces, [formats:[ 'json']]
     }
 
 

@@ -12,9 +12,9 @@ function NewSpaceController($scope,$http,$window,Upload) {
     $scope.ad_link = "www.google.com";
     $scope.d={};
     $scope.scale=100;
-    $scope.size_x;
-    $scope.size_y;
-    $scope.base_scale;
+    $scope.size_x=0;
+    $scope.size_y=0;
+    $scope.base_scale=0;
     $scope.fileplaced = false;
     $scope.area = 0;
 
@@ -63,7 +63,7 @@ function NewSpaceController($scope,$http,$window,Upload) {
 
                 });
 
-            }
+        }
 
     });
 
@@ -97,33 +97,5 @@ function NewSpaceController($scope,$http,$window,Upload) {
             console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
         });
     };
-
-
-
-
-   /* var uploader = $scope.uploader = new FileUploader({
-        url: 'save',
-        queueLimit: 1
-    });
-
-    // FILTERS
-
-
-
-    uploader.onAfterAddingFile = function(fileItem) {
-        console.info('onAfterAddingFile', fileItem);
-        var img = new Image();
-        img.src = fileItem._file;
-        console.log(img);
-        console.log(img.width, img.height)
-    };
-
-    uploader.onBeforeUploadItem = function(item) {
-        item.formData.push($scope.newSpace)
-    };
-*/
-
-
-
 
 }

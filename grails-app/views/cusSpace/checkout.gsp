@@ -35,7 +35,7 @@
 
                     <div class="ord-info">
 
-                        <span><strong>Expire date</strong> <g:formatDate format="dd-MM-yyyy" date="${order.space.expire_date + 30}"/>
+                        <span><strong>Expire date</strong> <g:formatDate format="dd-MM-yyyy" date="${newExpireDate}"/>
                             </span>
                     </div>
 

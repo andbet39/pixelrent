@@ -28,7 +28,7 @@ apply plugin: "war"
 apply plugin: "org.grails.grails-web"
 apply plugin: "org.grails.grails-gsp"
 apply plugin: "asset-pipeline"
-apply plugin:"com.craigburke.bower-installer"
+apply plugin: "com.craigburke.bower-installer"
 
 
 ext {

@@ -76,6 +76,15 @@ class CusSpaceController {
     @Secured("ROLE_USER")
     def checkout(Order order){
 
-        respond order
+        def newExpireDate
+
+        if(order.space.expire_date > new Date()){
+            newExpireDate = order.space.expire_date +30
+        }else
+        {
+            newExpireDate = new Date() +30
+        }
+
+        respond order ,model:[newExpireDate:newExpireDate]
     }
 }
