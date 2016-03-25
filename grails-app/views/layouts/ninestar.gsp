@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pixel for Rent</title>
+    <title>Rent your Pixel</title>
     <asset:stylesheet src="simple.css"/>
 
 
@@ -44,11 +44,11 @@
                 </div><!-- /gn-scroller -->
             </nav>
         </li>
-        <li><g:link controller="pixelRent" action="mass">PIXELRENT</g:link></li>
+        <li><g:link controller="pixelRent" action="mass">RENTYOURPIXEL</g:link></li>
         <li><ul class="company-social">
-            <li class="social-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=www.pixelrent.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li class="social-twitter"><a href="http://www.twitter.com/share?url=http://www.pixelrent.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li class="social-google"><a href="https://plus.google.com/share?url=http://www.pixelrent.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            <li class="social-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=www.rentyourPixel.com/about" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="social-twitter"><a href="http://www.twitter.com/share?url=http://www.rentyourPixel.com/about/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li class="social-google"><a href="https://plus.google.com/share?url=http://www.rentyourPixel.com/about/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
         </ul>	</li>
     </ul>
 </div>
